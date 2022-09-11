@@ -27,7 +27,7 @@
             var table = $('.datatables-target-exec').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('message.list') }}",
+                ajax: "{{ route('message.index') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex',

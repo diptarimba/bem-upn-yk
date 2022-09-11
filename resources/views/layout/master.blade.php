@@ -83,10 +83,10 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item pe-2">
-                        <a class="nav-link" href="#">KONTAK MAFIA </a>
+                        <a class="nav-link" href="{{route('message.fill')}}">KONTAK MAFIA </a>
                     </li>
                     <li class="nav-item pe-2">
-                        <a class="nav-link" href="#">E-PERPUSTAKAAN</a>
+                        <a class="nav-link" href="{{route('library.index')}}">E-PERPUSTAKAAN</a>
                     </li>
                 </ul>
             </div>
