@@ -1,7 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MessageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,10 +16,24 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/fill', [HomeController::class, 'index'])->name('message.fill');
-Route::get('/message/{id}', [HomeController::class, 'messageView'])->name('message.view');
-Route::post('/message', [HomeController::class, 'store'])->name('message.store');
-Route::get('/message', [HomeController::class, 'messageList'])->name('message.index');
+Route::get('/', function(){
+    return redirect()->route('message.create');
+});
+
+Route::get('/auth-login', [LoginController::class, 'index'])->name('login.index');
+Route::post('/auth-login', [LoginController::class, 'login'])->name('login.post');
+
+Route::get('/message', [MessageController::class, 'create'])->name('message.create');
+Route::post('/message', [MessageController::class, 'store'])->name('message.store');
 
 // Library
-Route::resource('library', BookController::class);
+Route::resource('library', BookController::class)->only('index');
+
+Route::group(['middleware' => ['auth:web'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
+    Route::get('/message', [MessageController::class, 'index'])->name('message.index');
+    Route::get('/message/{id}', [MessageController::class, 'edit'])->name('message.edit');
+
+    Route::resource('library', BookController::class);
+
+    Route::get('/auth-logout', [LoginController::class, 'logout'])->name('logout');
+});

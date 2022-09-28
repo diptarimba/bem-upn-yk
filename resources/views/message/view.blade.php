@@ -4,7 +4,7 @@
 
 @section('content')
     <div class="col-lg-5 col-12 mt-5 mx-auto">
-        <a href="{{route('message.index')}}" class="btn btn-outline-primary">Back</a>
+        <a href="{{route('admin.message.index')}}" class="btn btn-outline-primary">Back</a>
         <div class="card mt-2 mx-auto">
             <div class="card-body">
                 <p class="h3 text-center">DETAIL PESAN</p>

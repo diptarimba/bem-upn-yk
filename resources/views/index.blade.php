@@ -5,7 +5,7 @@
     <div class="d-flex flex-column justify-content-center align-items-center">
         <div class="form">
             <div class="text-center">
-                <h1 class="title">KONTAK MAFIA</h1>
+                <h1 class="title">KOTAK MAFIA</h1>
             </div>
             <form action="{{ route('message.store') }}" class="mt-5" method="POST">
                 @component('flash')

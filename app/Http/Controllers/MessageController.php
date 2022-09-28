@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Message;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class MessageController extends Controller
 {
-    public function index()
+    public function create()
     {
         return view('index');
     }
@@ -29,7 +29,7 @@ class HomeController extends Controller
         return redirect()->route('message.create')->with('status', 'Success mengisi kotak mafia');
     }
 
-    public function messageList(Request $request)
+    public function index(Request $request)
     {
         if($request->ajax())
         {
@@ -46,7 +46,7 @@ class HomeController extends Controller
         return view('message.index');
     }
 
-    public function messageView($id)
+    public function edit($id)
     {
         $message = Message::whereId($id)->first();
         return view('message.edit', compact('message'));

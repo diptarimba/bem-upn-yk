@@ -27,7 +27,7 @@
             var table = $('.datatables-target-exec').DataTable({
                 processing: true,
                 serverSide: true,
-                ajax: "{{ route('message.index') }}",
+                ajax: "{{ route('admin.message.index') }}",
                 columns: [{
                         data: 'DT_RowIndex',
                         name: 'DT_RowIndex',

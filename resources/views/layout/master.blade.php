@@ -7,6 +7,7 @@
     <title>@yield('title') | BEM FTM UPN YK</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ asset('src/css/style.css') }}" />
     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
     <style>
@@ -83,7 +84,7 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item pe-2">
-                        <a class="nav-link" href="{{route('message.fill')}}">KONTAK MAFIA </a>
+                        <a class="nav-link" href="{{route('message.create')}}">KOTAK MAFIA </a>
                     </li>
                     <li class="nav-item pe-2">
                         <a class="nav-link" href="{{route('library.index')}}">E-PERPUSTAKAAN</a>
