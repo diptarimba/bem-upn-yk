@@ -49,12 +49,12 @@ class MessageController extends Controller
     public function edit($id)
     {
         $message = Message::whereId($id)->first();
-        return view('message.edit', compact('message'));
+        return view('message.view', compact('message'));
     }
 
     public function getActionColumn($query)
     {
-        $viewBtn = route('message.edit', $query->id);
+        $viewBtn = route('admin.message.edit', $query->id);
         return '<a href="'.$viewBtn.'" class="btn btn-outline-primary btn-pill">View</a>';
     }
 }

@@ -32,8 +32,7 @@ Route::resource('library', BookController::class)->only('index');
 Route::group(['middleware' => ['auth:web'], 'prefix' => 'admin', 'as' => 'admin.'], function(){
     Route::get('/message', [MessageController::class, 'index'])->name('message.index');
     Route::get('/message/{id}', [MessageController::class, 'edit'])->name('message.edit');
-
-    Route::resource('library', BookController::class);
+    Route::resource('library', BookController::class)->parameter('library', 'book');
 
     Route::get('/auth-logout', [LoginController::class, 'logout'])->name('logout');
 });

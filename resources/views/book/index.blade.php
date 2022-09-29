@@ -3,8 +3,17 @@
 @section('title', 'Book Management')
 
 @section('content')
-    <div class="card mt-5">
-        <div class="card-header">Book Management</div>
+    <div class="mt-3">
+        @component('flash')
+        @endcomponent
+    </div>
+    <div class="card mt-2">
+        <div class="card-header">
+            <div class="d-flex justify-content-between">
+                <span>Book Management</span>
+                <a href="{{ route('admin.library.create') }}" class="btn btn-primary">Create Book</a>
+            </div>
+        </div>
         <div class="card-body">
             <table class="table datatables-target-exec table-striped">
                 <thead>

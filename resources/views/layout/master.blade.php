@@ -9,7 +9,7 @@
         integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" />
     <link rel="stylesheet" href="{{ asset('src/css/style.css') }}" />
-    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
     <style>
         .navbar {
             background-color: #f12b2f;
@@ -27,7 +27,7 @@
             font-weight: 700;
         }
 
-        #aspiration {
+        ••••• #aspiration {
             padding: 5rem 0;
         }
 
@@ -83,12 +83,24 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item pe-2">
-                        <a class="nav-link" href="{{route('message.create')}}">KOTAK MAFIA </a>
-                    </li>
-                    <li class="nav-item pe-2">
-                        <a class="nav-link" href="{{route('library.index')}}">E-PERPUSTAKAAN</a>
-                    </li>
+                    @if (Auth::check())
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('admin.message.index') }}">KOTAK MAFIA </a>
+                        </li>
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('admin.library.index') }}">E-PERPUSTAKAAN</a>
+                        </li>
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('admin.logout') }}">Logout</a>
+                        </li>
+                    @else
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('message.create') }}">KOTAK MAFIA </a>
+                        </li>
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('library.index') }}">E-PERPUSTAKAAN</a>
+                        </li>
+                    @endif
                 </ul>
             </div>
         </div>
