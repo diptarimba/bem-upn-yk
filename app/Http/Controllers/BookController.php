@@ -35,12 +35,14 @@ class BookController extends Controller
     {
         $this->validate($request, [
             'file' => 'required|mimes:pdf|max:1024',
+            'preview' => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'name' => 'required',
             'date' => 'required'
         ]);
 
         $book = Book::create(array_merge($request->all(), [
-            'file' => '/storage/'.$request->file('file')->storePublicly('bookPdf')
+            'file' => '/storage/'.$request->file('file')->storePublicly('bookPdf'),
+            'preview' => $request->hasFile('preview') ? '/storage/'.$request->file('preview')->storePublicly('bookPreview') : null
         ]));
 
         return redirect()->route('admin.library.index')->with('status', 'Success Add Book');
@@ -55,12 +57,14 @@ class BookController extends Controller
     {
         $this->validate($request, [
             'file' => 'nullable|mimes:pdf|max:1024',
+            'preview' => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'name' => 'required',
             'date' => 'required'
         ]);
 
         $book->update(array_merge($request->all(), [
-            'file' => $request->hasFile('file') ? '/storage/'.$request->file('file')->storePublicly('bookPdf') : $book->file
+            'file' => $request->hasFile('file') ? '/storage/'.$request->file('file')->storePublicly('bookPdf') : $book->file,
+            'preview' => $request->hasFile('preview') ? '/storage/'.$request->file('preview')->storePublicly('bookPreview') : $book->preview
         ]));
 
         return redirect()->route('admin.library.index')->with('status', 'Success Update Book');
