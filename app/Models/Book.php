@@ -10,6 +10,16 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'date', 'file', 'preview'
+        'name', 'date', 'file', 'preview', 'sub_category_id'
     ];
+
+    public function sub_category()
+    {
+        return $this->belongsTo(BookSubCategory::class, 'sub_category_id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(BookCategory::class);
+    }
 }
