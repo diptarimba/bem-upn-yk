@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\BookSubCategory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -75,5 +76,7 @@ class BookSubCategorySeeder extends Seeder
             ["name" => "Workshop KTI 2018", "category_id" => 3],
             ["name" => "Lainnya", "category_id" => 3]
         ];
+
+        BookSubCategory::insert($data);
     }
 }

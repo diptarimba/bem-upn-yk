@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('date');
             $table->unsignedBigInteger('sub_category_id');
             $table->timestamps();
+
+            $table->foreign('sub_category_id')->references('id')->on('book_sub_categories');
         });
     }
 

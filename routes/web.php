@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\SubCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -33,6 +35,8 @@ Route::group(['middleware' => ['auth:web'], 'prefix' => 'admin', 'as' => 'admin.
     Route::get('/message', [MessageController::class, 'index'])->name('message.index');
     Route::get('/message/{id}', [MessageController::class, 'edit'])->name('message.edit');
     Route::resource('library', BookController::class)->parameter('library', 'book');
+    Route::resource('category/sub', SubCategoryController::class)->parameter('sub', 'bookSubCategory');
+    Route::resource('category', CategoryController::class)->parameter('category', 'bookCategory');
 
     Route::get('/auth-logout', [LoginController::class, 'logout'])->name('logout');
 });

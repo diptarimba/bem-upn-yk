@@ -44,6 +44,17 @@
                             placeholder="2019" value="{{@$book->date}}"/>
                         <label for="date">Year</label>
                     </div>
+                    <div class="form-floating mb-3">
+                        <select class="form-select" name="sub_category_id" aria-label="Default select example">
+                            @foreach ($subCategory as $each)
+                            <option value="{{$each->id}}"
+                                @if(isset($book))
+                                {{ $each->id == $book->sub_category_id ? 'selected' : ''}}
+                                @endif
+                            >{{$each->name . ' - ' . $each->category->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <div class="text-end">
                         <button class="btn-sent border-0 text-white">Upload</button>
                     </div>

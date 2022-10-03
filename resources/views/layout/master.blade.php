@@ -88,10 +88,16 @@
                             <a class="nav-link" href="{{ route('admin.message.index') }}">KOTAK MAFIA </a>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link" href="{{ route('admin.library.index') }}">E-PERPUSTAKAAN</a>
+                            <a class="nav-link" href="{{ route('admin.category.index') }}">CATEGORY BOOK</a>
                         </li>
                         <li class="nav-item pe-2">
-                            <a class="nav-link" href="{{ route('admin.logout') }}">Logout</a>
+                            <a class="nav-link" href="{{ route('admin.sub.index') }}">SUBCATEGORY BOOK</a>
+                        </li>
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('admin.library.index') }}">PERPUSTAKAAN</a>
+                        </li>
+                        <li class="nav-item pe-2">
+                            <a class="nav-link" href="{{ route('admin.logout') }}">LOGOUT</a>
                         </li>
                     @else
                         <li class="nav-item pe-2">
