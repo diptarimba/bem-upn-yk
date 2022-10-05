@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('preview')->nullable();
             $table->string('file');
+            $table->boolean('is_url')->default(0);
             $table->string('date');
             $table->unsignedBigInteger('sub_category_id');
             $table->timestamps();

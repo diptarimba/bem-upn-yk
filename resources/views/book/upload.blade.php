@@ -21,11 +21,25 @@
                             </div>
                         </div>
                         @endif
-                        <a href="{{'/' . $book->file}}" class="btn btn-sm rounded mb-2 btn-primary" target="_blank">Check or Download File</a>
+                        <a href="{{$book->is_url ? $book->file : url('/') . $book->file}}" class="btn btn-sm rounded mb-2 btn-primary" target="_blank">Check or Download File</a>
                     @endif
                     <div class="form-floating mb-3">
-                        <input name="file" type="file" class="form-control" id="name" />
-                        <label for="name">File PDF</label>
+                        <input name="file" type="file" class="form-control" id="file" />
+                        <label for="file">File PDF</label>
+                    </div>
+                    <div class="card m-0 p-0 mb-3 rounded">
+                        <div class="card-body">
+                            <div class="form-check">
+                                <input name="is_url" type="checkbox" class="form-check-input" id="is_url" {{ @$book->is_url ? 'checked' : '' }} />
+                                <label class="form-check-label" for="is_url">IS URL?</label>
+                            </div>
+                        </div>
+                    </div>
+                    {{-- <div class="form-floating mb-3">
+                    </div> --}}
+                    <div class="form-floating mb-3">
+                        <input name="file" type="text" class="form-control" id="url" {{ !request()->routeIs('*.edit') ? 'disabled' : ($book->is_url ? '' : 'disabled') }} value="{{ $book->is_url ? $book->file : ''}}"/>
+                        <label for="url">URL FILE</label>
                     </div>
                     <div class="mb-1 d-flex justify-content-center">
                         <img id="file-ip-1-preview" class="img-fluid" style="max-width: 50%">
@@ -71,6 +85,20 @@
             var src = URL.createObjectURL(event.target.files[0]);
             var preview = document.getElementById("file-ip-1-preview");
             preview.src = src;
+        }
+    }
+    var checkbox = document.getElementById('is_url');
+    checkbox.addEventListener("change", checkboxDisabled, false);
+    function checkboxDisabled(){
+        var isChecked = checkbox.checked;
+        inputFile = document.getElementById('file');
+        inputUrl = document.getElementById('url');
+        if(isChecked){ //checked
+            inputUrl.removeAttribute('disabled')
+            inputFile.setAttribute('disabled', '');
+        }else{ //unchecked
+            inputUrl.setAttribute('disabled', '');
+            inputFile.removeAttribute('disabled')
         }
     }
 </script>

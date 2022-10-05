@@ -10,7 +10,7 @@ class Book extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name', 'date', 'file', 'preview', 'sub_category_id'
+        'name', 'date', 'file', 'preview', 'sub_category_id', 'is_url'
     ];
 
     public function sub_category()

@@ -40,16 +40,17 @@ class BookController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'file' => 'required|mimes:pdf|max:1024',
+            'file' => isset($request->is_url) ? 'required' : 'required|mimes:pdf|max:1024',
             'preview' => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'name' => 'required',
             'sub_category_id' => 'required|exists:book_sub_categories,id',
-            'date' => 'required'
+            'date' => 'required',
         ]);
 
         $book = Book::create(array_merge($request->all(), [
-            'file' => '/storage/'.$request->file('file')->storePublicly('bookPdf'),
-            'preview' => $request->hasFile('preview') ? '/storage/'.$request->file('preview')->storePublicly('bookPreview') : null
+            'file' => isset($request->is_url) ? $request->file : '/storage/'.$request->file('file')->storePublicly('bookPdf'),
+            'preview' => $request->hasFile('preview') ? '/storage/'.$request->file('preview')->storePublicly('bookPreview') : null,
+            'is_url' => isset($request->is_url) ? 1 : 0
         ]));
 
         return redirect()->route('admin.library.index')->with('status', 'Success Add Book');
@@ -67,7 +68,7 @@ class BookController extends Controller
     public function update(Request $request, Book $book)
     {
         $this->validate($request, [
-            'file' => 'nullable|mimes:pdf|max:1024',
+            'file' => isset($request->is_url) ? 'required' : 'nullable|mimes:pdf|max:1024',
             'preview' => 'nullable|mimes:jpg,png,jpeg|max:1024',
             'sub_category_id' => 'required|exists:book_sub_categories,id',
             'name' => 'required',
@@ -75,8 +76,9 @@ class BookController extends Controller
         ]);
 
         $book->update(array_merge($request->all(), [
-            'file' => $request->hasFile('file') ? '/storage/'.$request->file('file')->storePublicly('bookPdf') : $book->file,
-            'preview' => $request->hasFile('preview') ? '/storage/'.$request->file('preview')->storePublicly('bookPreview') : $book->preview
+            'file' => isset($request->is_url) ? $request->file : ($request->hasFile('file') ? '/storage/'.$request->file('file')->storePublicly('bookPdf') : $book->file),
+            'preview' => $request->hasFile('preview') ? '/storage/'.$request->file('preview')->storePublicly('bookPreview') : $book->preview,
+            'is_url' => isset($request->is_url) ? 1 : 0
         ]));
 
         return redirect()->route('admin.library.index')->with('status', 'Success Update Book');
