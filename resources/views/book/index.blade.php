@@ -9,10 +9,14 @@
     </div>
     <div class="card mt-2">
         <div class="card-header">
+            @if (Auth::check())
             <div class="d-flex justify-content-between">
                 <span>Book Management</span>
                 <a href="{{ route('admin.library.create') }}" class="btn btn-primary">Create Book</a>
             </div>
+            @else
+            <span>Book Management</span>
+            @endif
         </div>
         <div class="card-body">
             <table class="table datatables-target-exec table-striped">
