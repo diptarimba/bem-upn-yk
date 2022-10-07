@@ -38,7 +38,7 @@
                     {{-- <div class="form-floating mb-3">
                     </div> --}}
                     <div class="form-floating mb-3">
-                        <input name="file" type="text" class="form-control" id="url" {{ !request()->routeIs('*.edit') ? 'disabled' : ($book->is_url ? '' : 'disabled') }} value="{{ $book->is_url ? $book->file : ''}}"/>
+                        <input name="file" type="text" class="form-control" id="url" {{ !request()->routeIs('*.edit') ? 'disabled' : ($book->is_url ? '' : 'disabled') }} value="{{ @$book->is_url ? $book->file : ''}}"/>
                         <label for="url">URL FILE</label>
                     </div>
                     <div class="mb-1 d-flex justify-content-center">
