@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Book;
 use App\Models\BookSubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 use function Ramsey\Uuid\v1;
@@ -102,12 +103,14 @@ class BookController extends Controller
         $deleteBtn = route('admin.library.destroy', $query->id);
         $ident = Str::random(10);
         $addButton = '<a href="'.$viewBtn.'" class="btn btn-sm mx-1 my-1 btn-outline-primary">Download</a>';
-        $addButton .= '<a href="'.$editBtn.'" class="btn btn-sm mx-1 my-1 btn-outline-secondary">Edit</a>';
-        $addButton .= '<input form="form'.$ident .'" type="submit" value="Delete" class="mx-1 my-1 btn btn-sm btn-outline-danger">
-        <form id="form'.$ident .'" action="'.$deleteBtn.'" method="post">
-        <input type="hidden" name="_token" value="'.csrf_token().'" />
-        <input type="hidden" name="_method" value="DELETE">
-        </form>';
+        if(Auth::check()){
+            $addButton .= '<a href="'.$editBtn.'" class="btn btn-sm mx-1 my-1 btn-outline-secondary">Edit</a>';
+            $addButton .= '<input form="form'.$ident .'" type="submit" value="Delete" class="mx-1 my-1 btn btn-sm btn-outline-danger">
+            <form id="form'.$ident .'" action="'.$deleteBtn.'" method="post">
+            <input type="hidden" name="_token" value="'.csrf_token().'" />
+            <input type="hidden" name="_method" value="DELETE">
+            </form>';
+        }
         return $addButton;
     }
 }
