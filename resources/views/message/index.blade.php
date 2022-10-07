@@ -4,6 +4,7 @@
 
 @section('content')
     <div class="card mt-5">
+        <div class="card-header">Message Management</div>
         <div class="card-body">
             <table class="table datatables-target-exec table-striped">
                 <thead>
