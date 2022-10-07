@@ -7,7 +7,7 @@
         @component('flash')
         @endcomponent
     </div>
-    <div class="card mt-2">
+    <div class="card mt-5">
         <div class="card-header">
             @if (Auth::check())
             <div class="d-flex justify-content-between">
