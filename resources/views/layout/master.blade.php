@@ -67,6 +67,7 @@
             max-width: 40rem;
         }
     </style>
+    @yield('header')
 </head>
 
 <body>

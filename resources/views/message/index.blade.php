@@ -2,6 +2,11 @@
 
 @section('title', 'Message Management')
 
+@section('header')
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+@endsection
+
 @section('content')
     <div class="card mt-5">
         <div class="card-header">Message Management</div>
