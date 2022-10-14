@@ -16,11 +16,17 @@ class BookController extends Controller
     {
         if($request->ajax())
         {
-            $book = Book::select();
+            $book = Book::with('sub_category.category')->select();
             return datatables()->of($book)
             ->addIndexColumn()
             ->addColumn('action', function($query){
                 return $this->getActionColumn($query);
+            })
+            ->addColumn('category', function($query){
+                return $query->sub_category->category->name;
+            })
+            ->addColumn('sub_category', function($query){
+                return $query->sub_category->name;
             })
             ->rawColumns(['action'])
             ->make(true);

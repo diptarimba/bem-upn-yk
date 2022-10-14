@@ -28,7 +28,9 @@
                 <thead>
                     <th>No</th>
                     <th>Name</th>
-                    <th>Date</th>
+                    <th>Year</th>
+                    <th>Category</th>
+                    <th>Sub Category</th>
                     <th>Action</th>
                 </thead>
                 <tbody>
@@ -61,6 +63,14 @@
                     {
                         data: 'date',
                         name: 'date'
+                    },
+                    {
+                        data: 'category',
+                        name: 'category'
+                    },
+                    {
+                        data: 'sub_category',
+                        name: 'sub_category'
                     },
                     {
                         data: 'action',
