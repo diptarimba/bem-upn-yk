@@ -74,8 +74,9 @@
     <!-- navbar -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <img src="/src/img/logo.svg" width="40" alt="" />
+            <a class="navbar-brand" href="/">
+                {{-- <img class="border rounded bg-white" src="{{asset('assets/images/LOGO BEM FTM BENER FIX-01.png')}}" width="40" alt="" /> --}}
+                <img src="{{asset('assets/images/LOGO BEM FTM BENER FIX-02.png')}}" width="40" alt="" />
             </a>
             <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
