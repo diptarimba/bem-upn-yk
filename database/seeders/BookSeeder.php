@@ -63,7 +63,31 @@ class BookSeeder extends Seeder
             ['name' => 'ENN-Vol 09.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/34y9fooi2ndf1ug/ENN-Vol_09.pdf/file', 'is_url' => 1, 'sub_category_id' => 8],
             ['name' => 'ENN-Vol 10.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/djw7yyiexdpf136/ENN-Vol_10.pdf/file', 'is_url' => 1, 'sub_category_id' => 8],
             ['name' => 'Engineering Rock mechanics.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/kae2kugs4w0u23p/Engineering_Rock_mechanics.pdf/file', 'is_url' => 1, 'sub_category_id' => 9],
-            ['name' => 'Engineering Rock mechanics2.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/edq1y7pmy6gsnkr/Engineering_Rock_mechanics2.pdf/file', 'is_url' => 1, 'sub_category_id' => 9]
+            ['name' => 'Engineering Rock mechanics2.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/edq1y7pmy6gsnkr/Engineering_Rock_mechanics2.pdf/file', 'is_url' => 1, 'sub_category_id' => 9],
+            ['name' => '14387_01.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/gl72n9ytkhstxsu/14387_01.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_02.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/b0vliiyy2om8161/14387_02.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_03.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/c7hcpnw2zeny48k/14387_03.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_04.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/9bms2gtuhll5ulj/14387_04.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_05.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/fibcauat7svl118/14387_05.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_06.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/md0fe2p1terk8rw/14387_06.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_07.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/0z7xtlpg238lpvl/14387_07.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_08.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/9j5q1y4dbrswpon/14387_08.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_09.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/e57whjms5347wpi/14387_09.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_10.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/5hsa7f0hta71mva/14387_10.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_fm.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/qvf7ffakq1wokjp/14387_fm.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_indx.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/clqw87tfy18bx5r/14387_indx.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_pref.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/f8ccteq7f4t2t91/14387_pref.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '14387_toc.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/4ikhmzi1u22kj08/14387_toc.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => 'Stig O.Olofsson Applied explosives technology for construction and mining.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/4usei9ztg9plhyz/Stig_O.Olofsson_Applied_explosives_technology_for_construction_and_mining.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_01.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/f5i7cwvsvv4y9mf/4174x_01.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_02.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/ge3l2bfhtjz7dyf/4174x_02.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_03.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/hc8ecc6kece8hnm/4174x_03.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_04.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/b2bxwz9m001vyl3/4174x_04.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_fm.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/9ngi4ft7uk9ovx4/4174x_fm.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_fore.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/kjkqx468x2ilg3p/4174x_fore.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_f_t.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/7u7mgkuwnnwinn8/4174x_f_t.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_indx.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/cxv2l083he7o5iw/4174x_indx.pdf/file', 'is_url' => 1, 'sub_category_id' => 10],
+            ['name' => '4174x_toc.pdf', 'date' => 2022, 'file' => 'https://www.mediafire.com/file/521zxdxa3xqms5w/4174x_toc.pdf/file', 'is_url' => 1, 'sub_category_id' => 10]
         ];
 
         Book::insert($buku);
